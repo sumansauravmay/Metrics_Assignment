@@ -79,10 +79,23 @@ function App() {
           <Input type="text" placeholder="Filter by Tag Name" />
         </InputGroup>
       </Flex>
-      {/* 1+currentPage*10 */}
-      <Text mt={10}>
+
+      <Text mt={10} fontSize={20}>
         {" "}
-        Showing {currentPage===1?currentPage:itemsPerPage*(currentPage-1)+1}-{itemsPerPage*currentPage>data.length?data.length:itemsPerPage*currentPage} of {data.length}
+        Showing
+        <span style={{ fontWeight: "bold", marginLeft: "5px" }}>
+          {currentPage === 1
+            ? currentPage
+            : itemsPerPage * (currentPage - 1) + 1}
+          -
+          {itemsPerPage * currentPage > data.length
+            ? data.length
+            : itemsPerPage * currentPage}
+        </span>
+        of
+        <span style={{ fontWeight: "bold", marginLeft: "5px" }}>
+          {data.length}
+        </span>
       </Text>
 
       <main>
